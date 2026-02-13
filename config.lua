@@ -243,37 +243,6 @@ Config.Factions = {
     }
 }
 
----------------------------
--- RDE | Update System
----------------------------
-
--- 🌐 Remote version file (hosted on your server)
-Config.RemoteVersionURL = 'https://github.com/rde_skills/version.txt'
-
--- 📦 Download link for updates
-Config.DownloadLink = 'https://github.com/rde_skills/'
-
--- 🎨 Console icons (Lucide-inspired)
-Config.ConsoleIcons = {
-    update_available = '🔄',  -- Update icon
-    up_to_date = '✅',        -- Checkmark
-    error = '❌',             -- Error icon
-    rde_logo = '⚡'           -- RDE branding
-}
-
--- 🎨 ANSI color codes for console
-Config.ConsoleColors = {
-    header = '^5',           -- Purple (RDE branding)
-    update_available = '^3',  -- Yellow (warning)
-    up_to_date = '^2',        -- Green (success)
-    error = '^1',             -- Red (error)
-    reset = '^7'              -- Default
-}
-
--- 📢 Admin notification settings (optional)
-Config.AdminNotification = true  -- Enable/disable in-game admin alerts
-
-
 -- Localization Helper
 function _U(key, ...)
     local translation = Config.Languages[Config.Language] and Config.Languages[Config.Language][key] or key
@@ -286,4 +255,5 @@ end
 -- Export config for client/server
 AddEventHandler('rde_skills:getConfig', function(cb)
     cb(Config)
+
 end)

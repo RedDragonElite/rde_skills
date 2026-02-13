@@ -1201,7 +1201,7 @@ CreateThread(function()
     print("^3[RDE | SKILL SYSTEM]^7 - /resetskills [player]")
     print("^2[RDE | SKILL SYSTEM]^7 ========================================")
     print("^2[RDE | SKILL SYSTEM]^7 Author: RDE | SerpentsByte")
-    print("^2[RDE | SKILL SYSTEM]^7 AAA+++ Production Quality")
+    print("^2[RDE | SKILL SYSTEM]^7 Website: https://rd-elite.com")
     print("^2[RDE | SKILL SYSTEM]^7 ========================================")
 end)
 
@@ -1216,3 +1216,4 @@ function _U(key, ...)
     return key
 
 end
+

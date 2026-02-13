@@ -493,8 +493,8 @@ Config.AdminNotification = true  -- Notify admins of updates
 
 ### Getting Support
 
-- **SerpentsByte on NOSTR**: [Follow on NOSTR]([#](primal.net/p/nprofile1qqs8p6u423fappfqrrmxful5kt95hs7d04yr25x88apv7k4vszf4gcqynchct))
 - **.:: RedDragonElite ::. on NOSTR**: [Follow on NOSTR]([#](primal.net/p/nprofile1qqsv8km2w8yr0sp7mtk3t44qfw7wmvh8caqpnrd7z6ll6mn9ts03teg9ha4rl))
+- **SerpentsByte on NOSTR**: [Follow on NOSTR]([#](primal.net/p/nprofile1qqs8p6u423fappfqrrmxful5kt95hs7d04yr25x88apv7k4vszf4gcqynchct))
 - **GitHub Issues**: [Report bugs](https://github.com/RedDragonElite/rde_skills/issues)
 - **Documentation**: [Full docs](https://github.com/RedDragonElite/rde_skills/wiki)
 

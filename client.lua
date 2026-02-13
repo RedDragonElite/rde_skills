@@ -250,26 +250,6 @@ RegisterNetEvent('rde_skills:updateReputation', function(faction, newRep)
     end
 end)
 
----------------------------
--- RDE | Update System
----------------------------	
--- 🎮 Notify admins in-game (using ox_lib)
-RegisterNetEvent('rde:notifyAdminUpdate', function(remoteVersion)
-	if IsPlayerAdmin(source) then  -- Use your admin check function
-		lib.notify({
-			title = 'Update Available!',
-			description = ('New version: %s\nCurrent version: %s'):format(
-				remoteVersion,
-				GetResourceMetadata(GetCurrentResourceName(), 'version', 0)
-			),
-			type = 'inform',
-			icon = 'cloud-download',
-			iconColor = '#fbbf24',
-			duration = 10000
-		})
-	end
-end)
-
 -- ====================================
 -- SKILL BOOST SYSTEM
 -- ====================================
@@ -502,4 +482,5 @@ end)
 
 print("^2[RDE | SKILL SYSTEM]^7 Client loaded successfully!")
 print("^3[RDE | SKILL SYSTEM]^7 Commands: /skills | /toggleskillhud")
+
 print("^3[RDE | SKILL SYSTEM]^7 Native GTA skills:", Config.NativeSkillsEnabled and "ENABLED" or "DISABLED")

@@ -493,9 +493,10 @@ Config.AdminNotification = true  -- Notify admins of updates
 
 ### Getting Support
 
-- **Discord**: [Join our Discord](#)
-- **GitHub Issues**: [Report bugs](https://github.com/yourusername/rde_skills/issues)
-- **Documentation**: [Full docs](https://github.com/yourusername/rde_skills/wiki)
+- **SerpentsByte on NOSTR**: [Follow on NOSTR]([#](https://primal.net/p/nprofile1qqs8p6u423fappfqrrmxful5kt95hs7d04yr25x88apv7k4vszf4gcqynchct))
+- **.:: RedDragonElite ::. on NOSTR**: [Follow on NOSTR]([#](primal.net/p/nprofile1qqsv8km2w8yr0sp7mtk3t44qfw7wmvh8caqpnrd7z6ll6mn9ts03teg9ha4rl))
+- **GitHub Issues**: [Report bugs](https://github.com/RedDragonElite/rde_skills/issues)
+- **Documentation**: [Full docs](https://github.com/RedDragonElite/rde_skills/wiki)
 
 ### Update Instructions
 
@@ -642,4 +643,4 @@ If this script helped your server, please consider giving it a star! ⭐
 
 **Made with ❤️ by RDE | SerpentsByte**
 
-*For FiveM Servers Running ox_core - AAA+++ Production Quality*
+*For FiveM Servers Running ox_core*

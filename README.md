@@ -1,244 +1,243 @@
-# 🎯 RDE Ultimate Skills System - FiveM ox_core
+# 🎯 RDE Skills — Next-Generation Skill Progression System
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![FiveM](https://img.shields.io/badge/FiveM-Ready-blue.svg)](https://fivem.net/)
-[![ox_core](https://img.shields.io/badge/ox__core-Compatible-green.svg)](https://github.com/overextended/ox_core)
-[![Version](https://img.shields.io/badge/version-3.0.0-brightgreen.svg)](https://github.com/yourusername/rde_skills)
+<div align="center">
 
-A **next-generation skill progression system** for FiveM servers using ox_core. Features real-time statebag synchronization, 11+ customizable skills, faction reputation, achievements, prestige system, and native GTA skill integration. Built for performance and scalability.
+![Version](https://img.shields.io/badge/version-3.0.0-red?style=for-the-badge&logo=github)
+![License](https://img.shields.io/badge/license-RDE%20Black%20Flag%20v6.66-black?style=for-the-badge)
+![FiveM](https://img.shields.io/badge/FiveM-Compatible-orange?style=for-the-badge)
+![ox_core](https://img.shields.io/badge/ox__core-Required-blue?style=for-the-badge)
+![Free](https://img.shields.io/badge/price-FREE%20FOREVER-brightgreen?style=for-the-badge)
 
-## 📋 Table of Contents
+**11+ customizable skills, faction reputation, achievements, prestige system, and native GTA skill integration.**
+Built on ox_core · ox_lib · oxmysql · Statebag sync · Triple admin verification
 
+*Built by [Red Dragon Elite](https://rd-elite.com) | SerpentsByte*
+
+</div>
+
+---
+
+## 📖 Table of Contents
+
+- [Overview](#-overview)
 - [Features](#-features)
-- [Demo & Screenshots](#-demo--screenshots)
+- [Dependencies](#-dependencies)
 - [Installation](#-installation)
-- [Requirements](#-requirements)
-- [Configuration](#-configuration)
+- [Configuration](#%EF%B8%8F-configuration)
 - [Skills System](#-skills-system)
 - [Reputation System](#-reputation-system)
-- [Commands](#-commands)
-- [Admin System](#-admin-system)
 - [Exports & API](#-exports--api)
+- [Admin System](#-admin-system)
+- [Commands](#-commands)
 - [Performance](#-performance)
-- [Localization](#-localization)
-- [Support & Updates](#-support--updates)
+- [Changelog](#-changelog)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
 - [License](#-license)
+
+---
+
+## 🎯 Overview
+
+**RDE Skills** is a production-grade skill progression system for FiveM servers running ox_core. Real-time statebag synchronization, automatic XP gain through player activities, native GTA V stat integration, faction reputation, a full achievement system, and a prestige layer — all in one resource, free forever.
+
+### Why RDE Skills?
+
+| Feature | Generic Skill Scripts | RDE Skills |
+|---|---|---|
+| Real-time sync | Polling / delayed | ✅ Statebag — instant |
+| Native GTA integration | ❌ | ✅ 6 native stat hooks |
+| Faction reputation | ❌ | ✅ 5 factions |
+| Prestige system | ❌ | ✅ Permanent bonuses |
+| Achievement tracking | ❌ | ✅ Full system |
+| Skill synergies | ❌ | ✅ Combined bonuses |
+| Triple admin verification | ❌ | ✅ ACE + ox_core + Steam |
+| Performance (200+ players) | ❌ | ✅ Tested & benchmarked |
 
 ---
 
 ## ✨ Features
 
-### 🎮 Core Gameplay Features
+### 🎮 Core Gameplay
 
-- **11 Customizable Skills** - Driving, Shooting, Fitness, Strength, Flying, Stealth, Hacking, Mechanics, Cooking, Charisma, Fishing
-- **Real-Time XP Progression** - Automatic XP gain through player activities (running, driving, shooting, etc.)
-- **Native GTA Skill Integration** - Syncs with GTA V's native skill stats for enhanced gameplay
-- **Skill Perks & Milestones** - Unlock special abilities and bonuses as you level up
-- **Prestige System** - Reset skills for permanent bonuses and elite status
-- **Faction Reputation** - Build relationships with Police, Gangs, Medics, Mechanics, and Civilians
-- **Achievement System** - Track and reward player accomplishments
-- **Skill Synergies** - Combine skills for powerful bonus effects
-- **Interactive HUD** - Toggle-able skill display with progress bars and live updates
+**11 Customizable Skills** — Driving, Shooting, Fitness, Strength, Flying, Stealth, Hacking, Mechanics, Cooking, Charisma, Fishing
 
-### 🔧 Technical Features
+**Real-Time XP Progression** — Automatic XP gain from player activities: running, driving, shooting, flying, sneaking — no manual triggers needed for the core skills
 
-- **Statebag Synchronization** - Real-time skill updates across all clients
-- **Performance Optimized** - Supports 200+ concurrent players
-- **MySQL Database** - Persistent skill storage with auto-table creation
-- **Triple Admin Verification** - ACE permissions + Steam ID + ox_core groups
-- **Notification Cooldown System** - Prevents spam and improves UX
-- **Cache System** - Reduces database queries for better performance
-- **Debug Mode** - Built-in debugging tools for development
-- **Automatic Updates** - Built-in version checker with admin notifications
+**Native GTA Skill Integration** — Syncs directly with GTA V's native skill stats (`MP0_DRIVING_ABILITY`, `MP0_STAMINA`, etc.) for tangible gameplay effects
 
-### 🎨 User Experience
+**Skill Perks & Milestones** — Unlock special abilities and bonuses at levels 25, 50, 75, and 100
 
-- **ox_lib Integration** - Modern, beautiful UI with lucide icons
-- **Full Localization** - English and German (easily expandable)
-- **Responsive Design** - Clean interface with progress bars and metadata
-- **Smart Notifications** - Context-aware alerts with cooldown management
-- **Color-Coded Feedback** - Visual indicators for progress levels
+**Prestige System** — Reset all skills for permanent stat bonuses and elite status markers
 
----
+**Faction Reputation** — Build or destroy relationships with Police, Gangs, Medics, Mechanics, and Civilians — affects prices, access, and interactions
 
-## 🖼️ Demo & Screenshots
+**Achievement System** — Track and reward player accomplishments automatically
 
-### Skills Menu
-Beautiful ox_lib context menu displaying all player skills with levels, XP, and progress bars.
+**Skill Synergies** — Combine multiple high-level skills for powerful stacking bonuses
 
-### HUD Display
-Toggle-able heads-up display showing active skills with real-time progress tracking.
+**Interactive HUD** — Toggle-able skill display with live progress bars and real-time updates
 
-### Reputation Tracking
-Monitor your standing with different factions across the server.
+### 🔧 Technical
+
+- Statebag sync — real-time skill updates broadcast to all clients without polling
+- Cache system — reduces database queries by ~70%
+- Triple admin verification — ACE + ox_core groups + Steam ID whitelist
+- Auto table creation — no manual SQL import on first run
+- Notification cooldown system — no spam, clean UX
+- Built-in debug mode for development
+- Built-in version checker with admin notifications
 
 ---
 
-## 📦 Installation
+## 📦 Dependencies
 
-### Step 1: Download the Resource
+| Resource | Required | Notes |
+|---|---|---|
+| [oxmysql](https://github.com/communityox/oxmysql) | ✅ Required | Database layer |
+| [ox_core](https://github.com/communityox/ox_core) | ✅ Required | Player/character framework |
+| [ox_lib](https://github.com/communityox/ox_lib) | ✅ Required | UI, callbacks, notifications |
+| [ox_inventory](https://github.com/communityox/ox_inventory) | ⚠️ Optional | Item-based skill boosts |
+| [ox_target](https://github.com/communityox/ox_target) | ⚠️ Optional | Interaction system |
+
+---
+
+## 🚀 Installation
+
+### 1. Clone the repository
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/rde_skills.git
-
-# Or download the latest release
-# Extract to your resources folder
+cd resources
+git clone https://github.com/RedDragonElite/rde_skills.git
 ```
 
-### Step 2: Add to server.cfg
+### 2. Add to `server.cfg`
 
 ```cfg
+ensure oxmysql
 ensure ox_core
 ensure ox_lib
-ensure oxmysql
+ensure ox_target      # optional
+ensure ox_inventory   # optional
 ensure rde_skills
 ```
 
-### Step 3: Database Setup
+> **Order matters.** `rde_skills` must start **after** all its dependencies.
 
-**Automatic Setup**: Tables are created automatically on first run!
+### 3. Database
 
-The script creates 4 tables:
-- `rde_player_skills` - Stores skill XP and levels
-- `rde_player_reputation` - Tracks faction relationships
-- `rde_player_achievements` - Achievement tracking
-- `rde_player_perks` - Unlocked perk storage
+Tables are created automatically on first run. No manual SQL import needed. Four tables are created:
 
-### Step 4: Configure Settings
+```
+rde_player_skills       — skill XP and levels per character
+rde_player_reputation   — faction relationship values
+rde_player_achievements — achievement tracking
+rde_player_perks        — unlocked perk storage
+```
 
-Edit `config.lua` to customize:
-- Skill progression rates
-- XP gain amounts
-- Admin permissions
-- Faction settings
-- Language preferences
-- HUD positioning
+### 4. Configure (Optional)
 
-### Step 5: Restart Server
+Edit `config.lua` to adjust skill rates, XP amounts, admin permissions, language, and HUD position.
 
-```bash
+### 5. Restart
+
+```
 restart rde_skills
 ```
 
----
-
-## 🔧 Requirements
-
-### Required Dependencies
-
-| Dependency | Version | Purpose |
-|------------|---------|---------|
-| [ox_core](https://github.com/overextended/ox_core) | Latest | Framework foundation |
-| [ox_lib](https://github.com/overextended/ox_lib) | Latest | UI components & utilities |
-| [oxmysql](https://github.com/overextended/oxmysql) | Latest | Database operations |
-
-### Optional Dependencies
-
-| Dependency | Purpose |
-|------------|---------|
-| [ox_inventory](https://github.com/overextended/ox_inventory) | Item-based skill boosts |
-| [ox_target](https://github.com/overextended/ox_target) | Interaction system |
-
-### Server Requirements
-
-- **FiveM Server Build**: Recommended 6683 or higher
-- **MySQL/MariaDB**: Version 5.7+ or MariaDB 10.2+
-- **Server RAM**: Minimum 2GB (4GB+ recommended for 100+ players)
-- **Lua Version**: lua54 enabled in manifest
+Test with `/skills` in-game.
 
 ---
 
 ## ⚙️ Configuration
 
-### Basic Configuration
+### Basic
 
 ```lua
 Config = {
-    Debug = false,                    -- Enable debug prints
-    Language = 'en',                  -- Language (en/de)
-    NativeSkillsEnabled = true,       -- Sync with GTA native skills
-    NotificationCooldown = 5000,      -- Cooldown between notifications (ms)
-    XPGainInterval = 10000,           -- How often to check for XP gain (ms)
+    Debug               = false,   -- verbose console output
+    Language            = 'en',    -- 'en' or 'de'
+    NativeSkillsEnabled = true,    -- sync with GTA native stats
+    NotificationCooldown = 5000,   -- ms between notifications
+    XPGainInterval      = 10000,   -- ms between auto XP checks
+    CacheEnabled        = true,    -- reduces DB queries
 }
 ```
 
-### Skill Configuration Example
+### Skill Definition Example
 
 ```lua
 Config.Skills = {
     driving = {
-        label = 'skill_driving',
-        icon = 'fa-solid fa-car',
-        color = '#3498db',
-        maxLevel = 100,
+        label        = 'skill_driving',
+        icon         = 'fa-solid fa-car',
+        color        = '#3498db',
+        maxLevel     = 100,
         xpMultiplier = 1.0,
-        boostMultiplier = 0.05,       -- 5% boost per 10 levels
-        nativeSkill = 'MP0_DRIVING_ABILITY',
+        boostMultiplier = 0.05,           -- 5% boost per 10 levels
+        nativeSkill  = 'MP0_DRIVING_ABILITY',
         perks = {
-            [25] = 'Unlock: Faster acceleration',
-            [50] = 'Unlock: Reduced vehicle damage',
-            [75] = 'Unlock: Improved handling',
-            [100] = 'Master: Perfect control'
+            [25]  = 'Unlock: Faster acceleration',
+            [50]  = 'Unlock: Reduced vehicle damage',
+            [75]  = 'Unlock: Improved handling',
+            [100] = 'Master: Perfect control',
         }
     }
 }
 ```
 
-### Admin System Configuration
+### Admin System
 
 ```lua
 Config.AdminSystem = {
-    checkOrder = {'ace', 'oxcore', 'steam'},  -- Check order for admin verification
-    acePermission = 'rde.admin',               -- ACE permission
-    oxGroups = {                               -- ox_core groups
-        admin = 0,
-        moderator = 1
-    },
-    steamIds = {                               -- Steam ID whitelist
-        'steam:110000xxxxxxxx',
-    }
+    checkOrder    = {'ace', 'oxcore', 'steam'},
+    acePermission = 'rde.skills.admin',
+    oxGroups      = { admin = 0, moderator = 1 },
+    steamIds      = { 'steam:110000xxxxxxxx' },
 }
+```
+
+### ACE Permissions (server.cfg)
+
+```cfg
+add_ace group.admin rde.skills.admin allow
+add_principal identifier.steam:110000xxxxxxxx group.admin
 ```
 
 ---
 
-## 🎯 Skills System
+## 🎮 Skills System
 
 ### Available Skills
 
-| Skill | Description | Auto XP Gain | Native Integration |
-|-------|-------------|--------------|-------------------|
-| **Driving** | Vehicle control & handling | Driving vehicles | ✅ MP0_DRIVING_ABILITY |
-| **Shooting** | Weapon accuracy & damage | Using firearms | ✅ MP0_SHOOTING_ABILITY |
-| **Fitness** | Stamina & running speed | Running/sprinting | ✅ MP0_STAMINA |
-| **Strength** | Melee damage & carry capacity | Physical activities | ✅ MP0_STRENGTH |
-| **Flying** | Aircraft piloting skills | Flying planes/helicopters | ✅ MP0_FLYING_ABILITY |
-| **Stealth** | Sneaking & reduced detection | Crouching/stealth movement | ✅ MP0_STEALTH_ABILITY |
-| **Hacking** | Bypassing security systems | Manual triggers | ❌ |
-| **Mechanics** | Vehicle & device repair | Manual triggers | ❌ |
-| **Cooking** | Food preparation quality | Manual triggers | ❌ |
-| **Charisma** | Social interactions & prices | Manual triggers | ❌ |
-| **Fishing** | Catch quality & speed | Manual triggers | ❌ |
+| Skill | Auto XP Source | Native Stat |
+|---|---|---|
+| Driving | Driving vehicles | ✅ MP0_DRIVING_ABILITY |
+| Shooting | Using firearms | ✅ MP0_SHOOTING_ABILITY |
+| Fitness | Running / sprinting | ✅ MP0_STAMINA |
+| Strength | Physical activities | ✅ MP0_STRENGTH |
+| Flying | Planes / helicopters | ✅ MP0_FLYING_ABILITY |
+| Stealth | Crouching / sneaking | ✅ MP0_STEALTH_ABILITY |
+| Hacking | Manual trigger | — |
+| Mechanics | Manual trigger | — |
+| Cooking | Manual trigger | — |
+| Charisma | Manual trigger | — |
+| Fishing | Manual trigger | — |
 
-### Skill Progression
+### Progression
 
-- **XP to Level**: 100 XP = 1 Level
-- **Max Level**: Configurable per skill (default: 100)
-- **Progress Bar**: Shows % progress to next level
-- **Perks**: Unlock bonuses at levels 25, 50, 75, and 100
+- **100 XP = 1 Level** — configurable per skill
+- **Max Level** — 100 by default, adjustable per skill
+- **Perks** — unlock at levels 25, 50, 75, 100
 
-### Automatic XP Gain
+### Auto XP Rates (defaults)
 
-The system automatically awards XP for:
+- Fitness: 1–2 XP per interval while sprinting
+- Flying: 2–4 XP per 30 seconds airborne
+- Stealth: 1 XP per 15 seconds while crouching
+- Driving / Shooting: via manual trigger or custom events
 
-- **Fitness**: Running and sprinting (1-2 XP per interval)
-- **Flying**: Piloting aircraft (2-4 XP per 30 seconds)
-- **Stealth**: Crouching/sneaking (1 XP per 15 seconds)
-- **Driving**: Manual triggers or custom events
-- **Shooting**: Manual triggers or custom events
-
-### Manual XP Addition
+### Manual XP (from other resources)
 
 ```lua
 -- Server-side
@@ -252,395 +251,287 @@ TriggerServerEvent('rde_skills:addSkillXP', 'shooting', 5)
 
 ## ⭐ Reputation System
 
-### Available Factions
+### Factions
 
-| Faction | Description | Impact |
-|---------|-------------|--------|
-| **Police** | Law enforcement standing | Affects wanted level, police interactions |
-| **Gangs** | Criminal organization relations | Gang territory access, prices |
-| **Medics** | Emergency services reputation | Hospital costs, priority treatment |
-| **Mechanics** | Auto shop relationships | Repair costs, upgrade access |
-| **Civilians** | General public perception | Job availability, store prices |
+| Faction | Effect |
+|---|---|
+| Police | Affects wanted level interactions and police cooldowns |
+| Gangs | Territory access, black market pricing |
+| Medics | Hospital costs, priority treatment |
+| Mechanics | Repair costs, upgrade access |
+| Civilians | Job availability, general store pricing |
 
-### Reputation Ranges
+### Reputation Scale
 
-- **-1000 to -500**: Hostile
-- **-499 to -100**: Unfriendly
-- **-99 to 99**: Neutral
-- **100 to 499**: Friendly
-- **500 to 1000**: Allied
+```
+-1000 to -500  →  Hostile
+ -499 to -100  →  Unfriendly
+   -99 to  99  →  Neutral
+  100 to  499  →  Friendly
+  500 to 1000  →  Allied
+```
 
 ### Managing Reputation
 
 ```lua
--- Add reputation
+-- From client
 TriggerServerEvent('rde_skills:addReputation', 'police', 10)
 
--- Get current reputation
+-- Read via statebag
 local rep = Player(source).state.reputation.police
 ```
 
 ---
 
-## 💻 Commands
+## 🔧 Exports & API
 
-### Player Commands
-
-| Command | Description | Usage |
-|---------|-------------|-------|
-| `/skills` | Open skills menu | `/skills` |
-| `/toggleskillhud` | Toggle HUD display | `/toggleskillhud` |
-| `/prestige` | Reset skills for bonuses | `/prestige` |
-
-### Admin Commands
-
-| Command | Description | Usage | Permission |
-|---------|-------------|-------|------------|
-| `/giveskillxp` | Give XP to player | `/giveskillxp [id] [skill] [amount]` | Admin |
-| `/setskill` | Set skill level | `/setskill [id] [skill] [level]` | Admin |
-| `/giverep` | Give reputation | `/giverep [id] [faction] [amount]` | Admin |
-| `/resetskills` | Reset all skills | `/resetskills [id]` | Admin |
-
----
-
-## 🛡️ Admin System
-
-### Triple Verification System
-
-The script uses **three-tier admin verification** for maximum security:
-
-1. **ACE Permissions** - FiveM's native permission system
-2. **ox_core Groups** - Role-based access control
-3. **Steam ID Whitelist** - Manual identifier approval
-
-### Configuration
+### Server-Side
 
 ```lua
-Config.AdminSystem = {
-    -- Order to check (tries each method in sequence)
-    checkOrder = {'ace', 'oxcore', 'steam'},
-    
-    -- ACE permission required
-    acePermission = 'rde.admin',
-    
-    -- ox_core groups (group_name = minimum_grade)
-    oxGroups = {
-        admin = 0,      -- Admin group, any grade
-        moderator = 1   -- Moderator group, grade 1+
-    },
-    
-    -- Steam ID whitelist
-    steamIds = {
-        'steam:110000xxxxxxxx',
-        'steam:110000yyyyyyyy'
-    }
-}
-```
-
-### Setting Up ACE Permissions
-
-Add to your `server.cfg`:
-
-```cfg
-# Grant admin permission to specific identifier
-add_ace identifier.steam:110000xxxxxxxx rde.admin allow
-
-# Or grant to a group
-add_ace group.admin rde.admin allow
-add_principal identifier.steam:110000xxxxxxxx group.admin
-```
-
----
-
-## 🔌 Exports & API
-
-### Server-Side Exports
-
-```lua
--- Get player skills
+-- Get all skills for a player
 local skills = exports.rde_skills:getPlayerSkills(source)
 
--- Get specific skill level
+-- Get a specific skill level
 local level = exports.rde_skills:getSkillLevel(source, 'driving')
 
--- Get player reputation
+-- Get faction reputation
 local rep = exports.rde_skills:getPlayerReputation(source, 'police')
 
--- Add skill XP programmatically
+-- Add XP programmatically
 exports.rde_skills:addSkillXP(source, 'shooting', 50)
 
 -- Add reputation
 exports.rde_skills:addReputation(source, 'police', 25)
 
--- Check if skill meets requirement
+-- Skill requirement check
 local canUse = exports.rde_skills:hasSkillLevel(source, 'hacking', 50)
 ```
 
-### Client-Side Exports
+### Client-Side
 
 ```lua
 -- Open skills menu
 exports.rde_skills:openSkillsMenu()
 
--- Get local skills cache
+-- Get locally cached skills
 local skills = exports.rde_skills:getLocalSkills()
 
 -- Toggle HUD
 exports.rde_skills:toggleHUD()
 ```
 
-### Using Statebags
-
-Access player skills in real-time from any resource:
+### Statebag Access (any resource)
 
 ```lua
 -- Server-side
-local player = Player(source)
-local skills = player.state.skills
-local totalLevel = player.state.totalLevel
+local player   = Player(source)
+local skills   = player.state.skills
+local total    = player.state.totalLevel
 local prestige = player.state.prestige
 
 -- Client-side
-local player = Player(GetPlayerServerId(PlayerId()))
+local player  = Player(GetPlayerServerId(PlayerId()))
 local driving = player.state.skills.driving or 0
 ```
 
 ---
 
+## 🛡️ Admin System
+
+Triple-layer verification runs in configurable order — `ace` → `oxcore` → `steam`. All three must fail before access is denied.
+
+```lua
+Config.AdminSystem = {
+    checkOrder    = {'ace', 'oxcore', 'steam'},
+    acePermission = 'rde.skills.admin',
+    oxGroups      = {
+        admin     = 0,   -- any grade
+        moderator = 1,   -- grade 1+
+    },
+    steamIds = {
+        'steam:110000xxxxxxxx',
+    },
+}
+```
+
+---
+
+## 📋 Commands
+
+### Player
+
+| Command | Description |
+|---|---|
+| `/skills` | Open the skills menu |
+| `/toggleskillhud` | Toggle the HUD overlay |
+| `/prestige` | Reset skills for permanent prestige bonuses |
+
+### Admin
+
+| Command | Usage | Description |
+|---|---|---|
+| `/giveskillxp` | `[id] [skill] [amount]` | Give XP to a player |
+| `/setskill` | `[id] [skill] [level]` | Set a skill to a specific level |
+| `/giverep` | `[id] [faction] [amount]` | Adjust faction reputation |
+| `/resetskills` | `[id]` | Reset all skills for a player |
+
+---
+
 ## ⚡ Performance
-
-### Optimization Features
-
-- **Caching System**: Reduces database calls by 70%
-- **Statebag Sync**: Real-time updates without polling
-- **Lazy Loading**: Skills load only when needed
-- **Batch Processing**: Groups database operations
-- **Smart Notifications**: Cooldown system prevents spam
-- **Efficient Threads**: Optimized tick rates for different systems
 
 ### Benchmarks
 
-Tested on various server configurations:
-
-| Players | RAM Usage | CPU Usage | SQL Queries/Min |
-|---------|-----------|-----------|-----------------|
+| Players | RAM | CPU | SQL Queries/min |
+|---|---|---|---|
 | 32 | ~15 MB | <1% | ~20 |
 | 64 | ~28 MB | ~1% | ~35 |
 | 128 | ~52 MB | ~2% | ~65 |
 | 256 | ~95 MB | ~3% | ~120 |
 
-### Best Practices
+### Optimization Tips
 
-1. **Enable Caching**: Keep `Config.CacheEnabled = true`
-2. **Adjust Intervals**: Increase `XPGainInterval` for lower CPU usage
-3. **Database Indexing**: Tables include optimized indexes by default
-4. **Notification Cooldown**: Use 5000ms+ to reduce spam
-5. **Clean Database**: Periodically remove inactive player data
-
----
-
-## 🌍 Localization
-
-### Supported Languages
-
-- **English (en)** - Default
-- **German (de)** - Vollständig übersetzt
-
-### Adding New Languages
-
-1. Edit `config.lua`
-2. Add your language code to `Config.Languages`:
-
-```lua
-Config.Languages = {
-    en = {
-        skills_title = 'Skills',
-        skill_level = 'Level %d (%d%%)',
-        -- ... more translations
-    },
-    es = {
-        skills_title = 'Habilidades',
-        skill_level = 'Nivel %d (%d%%)',
-        -- ... Spanish translations
-    }
-}
-```
-
-3. Set `Config.Language = 'es'`
-
-### Translation Keys
-
-All UI text uses translation keys via `_U()` function:
-- Menu titles and descriptions
-- Notifications
-- Skill names
-- Faction labels
-- Error messages
-
----
-
-## 🔄 Support & Updates
-
-### Automatic Update Checker
-
-The script includes built-in version checking:
-
-```lua
-Config.RemoteVersionURL = 'https://raw.githubusercontent.com/yourusername/rde_skills/main/version.txt'
-Config.DownloadLink = 'https://github.com/yourusername/rde_skills/releases'
-Config.AdminNotification = true  -- Notify admins of updates
-```
-
-### Getting Support
-
-- **.:: RedDragonElite ::. on NOSTR**: [Follow on NOSTR]([#](primal.net/p/nprofile1qqsv8km2w8yr0sp7mtk3t44qfw7wmvh8caqpnrd7z6ll6mn9ts03teg9ha4rl))
-- **SerpentsByte on NOSTR**: [Follow on NOSTR]([#](primal.net/p/nprofile1qqs8p6u423fappfqrrmxful5kt95hs7d04yr25x88apv7k4vszf4gcqynchct))
-- **GitHub Issues**: [Report bugs](https://github.com/RedDragonElite/rde_skills/issues)
-- **Documentation**: [Full docs](https://github.com/RedDragonElite/rde_skills/wiki)
-
-### Update Instructions
-
-1. **Backup** your `config.lua` and database
-2. Download latest version
-3. Replace files (keep your config!)
-4. Restart the resource
-5. Check console for migration notes
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Setup
-
-```bash
-# Clone your fork
-git clone https://github.com/yourusername/rde_skills.git
-
-# Enable debug mode
-# In config.lua: Config.Debug = true
-
-# Test on local server
-ensure rde_skills
-```
+- Keep `Config.CacheEnabled = true` — reduces DB queries by ~70%
+- Increase `XPGainInterval` for lower CPU on busy servers
+- Use 5000ms+ for `NotificationCooldown` to minimize UI spam
+- Tables ship with optimized indexes — don't remove them
 
 ---
 
 ## 📝 Changelog
 
-### Version 3.0.0 - Current
-- ✅ Real-time statebag synchronization
-- ✅ Native GTA skill integration
-- ✅ Prestige system
-- ✅ Achievement tracking
-- ✅ Performance optimizations
-- ✅ Triple admin verification
-- ✅ Auto-table creation
+### v3.0.0 — Current
+- Real-time statebag synchronization
+- Native GTA V skill stat integration
+- Prestige system
+- Achievement tracking
+- Triple admin verification
+- Auto table creation
+- Performance optimizations
 
-### Version 2.0.0
-- Added reputation system
+### v2.0.0
+- Reputation system
 - Skill perks & milestones
-- HUD display system
-- Localization support
+- HUD display
+- Localization (EN/DE)
 
-### Version 1.0.0
+### v1.0.0
 - Initial release
 - Basic skill progression
 - ox_core integration
 
 ---
 
-## 📄 License
+## 🐛 Troubleshooting
 
-This project is licensed under the **BLACK FLAG SOURCE LICENSE v6.66** - see the [LICENSE](LICENSE) file for details.
+**Skills not syncing to other resources?**
+Access via statebag: `Player(source).state.skills`. Make sure you're reading after `ox:playerLoaded` fires.
+
+**Auto XP not triggering?**
+Enable `Config.Debug = true` and check console output during player activity. Verify `XPGainInterval` isn't set too high.
+
+**Native GTA stats not applying?**
+Ensure `Config.NativeSkillsEnabled = true` and that the player's ped is fully loaded before the sync fires. Check console for native stat errors.
+
+**Admin commands not working?**
+Verify your ACE setup in `server.cfg` and that your Steam ID in `Config.AdminSystem.steamIds` is the correct hex format (`steam:110000xxxxxxxxx`).
+
+**Tables not created on first run?**
+Make sure `oxmysql` is fully started before `rde_skills`. Adjust the `ensure` order in `server.cfg` if needed.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit: `git commit -m 'Add your feature'`
+4. Push: `git push origin feature/your-feature`
+5. Open a Pull Request
+
+Guidelines: follow existing Lua conventions, comment complex logic, test on a live server before PR, update docs if adding features.
+
+---
+
+## 📜 License
 
 ```
-    ###################################################################################
-    #                                                                                 #
-    #      .:: RED DRAGON ELITE (RDE)  -  BLACK FLAG SOURCE LICENSE v6.66 ::.         #
-    #                                                                                 #
-    #   PROJECT:    RDE_PROPS | ADVANCED PROP SYSTEM FOR OX_CORE WITH STATEBAG SYNC   #
-    #   ARCHITECT:  .:: RDE ⧌ Shin [ △ ᛋᛅᚱᛒᛅᚾᛏᛋ ᛒᛁᛏᛅ ▽ ] ::. | https://rd-elite.com   #
-    #   ORIGIN:     https://github.com/RedDragonElite                                 #
-    #                                                                                 #
-    #   WARNING: THIS CODE IS PROTECTED BY DIGITAL VOODOO AND PURE HATRED FOR LEAKERS #
-    #                                                                                 #
-    #   [ THE RULES OF THE GAME ]                                                     #
-    #                                                                                 #
-    #   1. // THE "FUCK GREED" PROTOCOL (FREE USE)                                    #
-    #      You are free to use, edit, and abuse this code on your server.             #
-    #      Learn from it. Break it. Fix it. That is the hacker way.                   #
-    #      Cost: 0.00€. If you paid for this, you got scammed by a rat.               #
-    #                                                                                 #
-    #   2. // THE TEBEX KILL SWITCH (COMMERCIAL SUICIDE)                              #
-    #      Listen closely, you parasites:                                             #
-    #      If I find this script on Tebex, Patreon, or in a paid "Premium Pack":      #
-    #      > I will DMCA your store into oblivion.                                    #
-    #      > I will publicly shame your community.                                    #
-    #      > I hope your server lag spikes to 9999ms every time you blink.            #
-    #      SELLING FREE WORK IS THEFT. AND I AM THE JUDGE.                            #
-    #                                                                                 #
-    #   3. // THE CREDIT OATH                                                         #
-    #      Keep this header. If you remove my name, you admit you have no skill.      #
-    #      You can add "Edited by [YourName]", but never erase the original creator.  #
-    #      Don't be a skid. Respect the architecture.                                 #
-    #                                                                                 #
-    #   4. // THE CURSE OF THE COPY-PASTE                                             #
-    #      This code uses advanced Statebags and heavy logic.                         #
-    #      If you just copy-paste without reading, it WILL break.                     #
-    #      Don't come crying to my DMs. RTFM or learn to code.                        #
-    #                                                                                 #
-    #   ---------------------------------------------------------------------------   #
-    #   "We build the future on the graves of paid resources."                        #
-    #   "REJECT MODERN MEDIOCRITY. EMBRACE RDE SUPERIORITY."                          #
-    #   ---------------------------------------------------------------------------   #
-    ###################################################################################
+###################################################################################
+#                                                                                 #
+#      .:: RED DRAGON ELITE (RDE)  -  BLACK FLAG SOURCE LICENSE v6.66 ::.         #
+#                                                                                 #
+#   PROJECT:    RDE_SKILLS v3.0.0 (NEXT-GEN FIVEM SKILL PROGRESSION SYSTEM)       #
+#   ARCHITECT:  .:: RDE ⧌ Shin [△ ᛋᛅᚱᛒᛅᚾᛏᛋ ᛒᛁᛏᛅ ▽] ::. | https://rd-elite.com     #
+#   ORIGIN:     https://github.com/RedDragonElite                                 #
+#                                                                                 #
+#   WARNING: THIS CODE IS PROTECTED BY DIGITAL VOODOO AND PURE HATRED FOR LEAKERS #
+#                                                                                 #
+#   [ THE RULES OF THE GAME ]                                                     #
+#                                                                                 #
+#   1. // THE "FUCK GREED" PROTOCOL (FREE USE)                                    #
+#      You are free to use, edit, and abuse this code on your server.             #
+#      Learn from it. Break it. Fix it. That is the hacker way.                   #
+#      Cost: 0.00€. If you paid for this, you got scammed by a rat.               #
+#                                                                                 #
+#   2. // THE TEBEX KILL SWITCH (COMMERCIAL SUICIDE)                              #
+#      Listen closely, you parasites:                                             #
+#      If I find this script on Tebex, Patreon, or in a paid "Premium Pack":      #
+#      > I will DMCA your store into oblivion.                                    #
+#      > I will publicly shame your community.                                    #
+#      > I hope your server lag spikes to 9999ms every time you blink.            #
+#      SELLING FREE WORK IS THEFT. AND I AM THE JUDGE.                            #
+#                                                                                 #
+#   3. // THE CREDIT OATH                                                         #
+#      Keep this header. If you remove my name, you admit you have no skill.      #
+#      You can add "Edited by [YourName]", but never erase the original creator.  #
+#      Don't be a skid. Respect the architecture.                                 #
+#                                                                                 #
+#   4. // THE CURSE OF THE COPY-PASTE                                             #
+#      This code uses statebags, native stat hooks, and layered caching.          #
+#      If you just copy-paste without reading, it WILL break.                     #
+#      Don't come crying to my DMs. RTFM or learn to code.                        #
+#                                                                                 #
+#   --------------------------------------------------------------------------    #
+#   "We build the future on the graves of paid resources."                        #
+#   "REJECT MODERN MEDIOCRITY. EMBRACE RDE SUPERIORITY."                          #
+#   --------------------------------------------------------------------------    #
+###################################################################################
 ```
 
----
-
-## 🙏 Credits
-
-**Author**: RDE | SerpentsByte
-
-**Special Thanks**:
-- [Overextended](https://github.com/overextended) - For ox_core, ox_lib, and oxmysql
-- FiveM Community - For continued support and feedback
-- Beta Testers - For helping perfect the system
+**TL;DR:**
+- ✅ Free forever — use it, edit it, learn from it
+- ✅ Keep the header — credit where it's due
+- ❌ Don't sell it — commercial use = instant DMCA
+- ❌ Don't be a skid — copy-paste without reading won't work anyway
 
 ---
 
-## 🔗 Links
+## 🌐 Community & Support
 
-- **GitHub**: [https://github.com/yourusername/rde_skills](https://github.com/RedDragonElite/rde_skills)
-- **Website**: [Join our community](https://rd-elite.com)
-- **Documentation**: [Full Wiki](https://github.com/RedDragonElite/rde_skills/wiki)
-- **Issues**: [Report bugs](https://github.com/RedDragonElite/rde_skills/issues)
+| | |
+|---|---|
+| 🐙 GitHub | [RedDragonElite](https://github.com/RedDragonElite) |
+| 🌍 Website | [rd-elite.com](https://rd-elite.com) |
+| 🔵 Nostr (RDE) | [RedDragonElite](https://primal.net/p/nprofile1qqsv8km2w8yr0sp7mtk3t44qfw7wmvh8caqpnrd7z6ll6mn9ts03teg9ha4rl) |
+| 🔵 Nostr (Shin) | [SerpentsByte](https://primal.net/p/nprofile1qqs8p6u423fappfqrrmxful5kt95hs7d04yr25x88apv7k4vszf4gcqynchct) |
+| 🚪 RDE Doors | [rde_doors](https://github.com/RedDragonElite/rde_doors) |
+| 🚗 RDE Car Service | [rde_carservice](https://github.com/RedDragonElite/rde_carservice) |
+| 📡 RDE Nostr Log | [rde_nostr_log](https://github.com/RedDragonElite/rde_nostr_log) |
 
----
-
-## 📊 Statistics
-
-![GitHub stars](https://img.shields.io/github/stars/RedDragonElite/rde_skills?style=social)
-![GitHub forks](https://img.shields.io/github/forks/RedDragonElite/rde_skills?style=social)
-![GitHub issues](https://img.shields.io/github/issues/RedDragonElite/rde_skills)
-![GitHub downloads](https://img.shields.io/github/downloads/RedDragonElite/rde_skills/total)
-
----
-
-## ⭐ Star History
-
-If this script helped your server, please consider giving it a star! ⭐
+**When asking for help, always include:**
+- Full error from server console or txAdmin
+- Your `server.cfg` resource start order
+- ox_core / ox_lib versions in use
 
 ---
 
-**Made with ❤️ by RDE | SerpentsByte**
+<div align="center">
 
-*For FiveM Servers Running ox_core*
+*"We build the future on the graves of paid resources."*
+
+**REJECT MODERN MEDIOCRITY. EMBRACE RDE SUPERIORITY.**
+
+🐉 Made with 🔥 by [Red Dragon Elite](https://rd-elite.com)
+
+[⬆ Back to Top](#-rde-skills--next-generation-skill-progression-system)
+
+</div>

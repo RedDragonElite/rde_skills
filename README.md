@@ -1,4 +1,5 @@
 # 🎯 RDE Skills — Next-Generation Skill Progression System
+![dl_1771639784566](https://github.com/user-attachments/assets/1bf2704a-225b-436b-ae46-da310d356e6e)
 
 <div align="center">
 
